@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CjcuUniversity.ViewModels.EnrollmentDateGroup>
+
+@{
+    ViewBag.Title = "Student Body Statistics";
+}
+
+<h2>學生人數統計</h2>
+
+<table>
+    <tr>
+        <th>
+            註冊日期   
+        </th>
+        <th>
+            學生數
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                @item.StudentCount
+            </td>
+        </tr>
+    }
+</table>
