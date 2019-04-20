@@ -16,9 +16,10 @@ namespace CjcuUniversity.Controllers
     {
         private SchoolContext db = new SchoolContext();
 
-        // GET: Student
+        // GET: 學生的資料
         public ViewResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
+            /* 記得目前的排序 */
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
